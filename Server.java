@@ -23,7 +23,7 @@ public class Server {
             public String CrearOferta(Oferta o, String ip) throws RemoteException {
                 System.out.println("la ip "+ ip +" creo una oferta");
                 try {
-                    ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("bd.dat",true));
+                    ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("bd.dat",false));
                     oos.writeObject(o);
                     oos.close();
                 } catch (Exception e) {
