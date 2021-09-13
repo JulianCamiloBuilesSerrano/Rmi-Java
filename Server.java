@@ -46,7 +46,7 @@ public class Server {
                         aux = ois.readObject();
                     }
                 } catch (Exception e) {
-                    e.printStackTrace();
+                    System.out.println ("Fin de fichero");
                 }
                 return lista;
             }
