@@ -23,7 +23,7 @@ public class Server {
             public String CrearOferta(Oferta o, String ip) throws RemoteException {
                 System.out.println("la ip "+ ip +" creo una oferta");
                 try {
-                    ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("/bd.dat"));
+                    ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("bd.dat"));
                     oos.writeObject(o);
                 } catch (Exception e) {
                     e.printStackTrace();
@@ -38,7 +38,7 @@ public class Server {
                 System.out.println("la ip "+ ip +" solicito lista de ofertas");
                 ArrayList<Oferta> lista = new ArrayList<Oferta>();
                 try {
-                    ObjectInputStream ois = new ObjectInputStream(new FileInputStream("/bd.dat"));
+                    ObjectInputStream ois = new ObjectInputStream(new FileInputStream("bd.dat"));
                     Object aux = ois.readObject();
                     while (aux != null) {
                         if (aux instanceof Oferta)
