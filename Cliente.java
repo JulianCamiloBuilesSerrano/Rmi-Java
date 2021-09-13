@@ -13,7 +13,7 @@ public class Cliente {
         System.out.println("pasa el ger registry"+ registry.getClass());
         IOferta oferta = (IOferta)registry.lookup("oferta");
 
-
+        oferta.xd();
         Scanner sc = new Scanner(System.in);
         System.out.println("1. Registrar Oferta");
         System.out.println("2. ver ofertas");

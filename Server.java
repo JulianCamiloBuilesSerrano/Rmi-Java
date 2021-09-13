@@ -51,6 +51,12 @@ public class Server {
                 return lista;
             }
 
+            @Override
+            public void xd() throws RemoteException {
+               System.out.println("entra");
+                
+            }
+
         }, 0);
         Registry registry = LocateRegistry.createRegistry(port);
         System.out.println("Se escucha en el puerto: " + port);
