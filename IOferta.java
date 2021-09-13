@@ -1,10 +1,11 @@
 import java.rmi.Remote;
 import java.rmi.RemoteException;
+import java.util.ArrayList;
 
 public interface IOferta extends Remote{
 
-    public String CrearOferta() throws RemoteException;
+    public String CrearOferta(Oferta o, String ip) throws RemoteException;
 
-    public String MostrarOfertas() throws RemoteException;
+    public ArrayList<Oferta> MostrarOfertas(String ip) throws RemoteException;
 
 }
