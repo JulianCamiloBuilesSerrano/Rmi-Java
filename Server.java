@@ -23,8 +23,9 @@ public class Server {
             public String CrearOferta(Oferta o, String ip) throws RemoteException {
                 System.out.println("la ip "+ ip +" creo una oferta");
                 try {
-                    ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("bd.dat"));
+                    ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("bd.dat",true));
                     oos.writeObject(o);
+                    oos.close();
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
@@ -47,7 +48,9 @@ public class Server {
                     }
                 } catch (Exception e) {
                     System.out.println ("Fin de fichero");
+                    
                 }
+               
                 return lista;
             }
 
