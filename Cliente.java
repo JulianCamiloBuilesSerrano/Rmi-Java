@@ -8,10 +8,8 @@ public class Cliente {
     public static final int port = 1100;
     public static void main(String[] scr) throws RemoteException, NotBoundException{
         Registry registry = LocateRegistry.getRegistry(ip,port);
-        IOferta oferta = (IOferta) registry.lookup("oferta");
+        System.out.println("pasa el ger registry"+ registry.getClass());
+        IOferta oferta = (IOferta)registry.lookup("oferta");
         oferta.CrearOferta();
-
-
-
     }
 }

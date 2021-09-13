@@ -9,17 +9,20 @@ import java.rmi.server.UnicastRemoteObject;
 public class Server {
     public static final int port = 1100;
     public static void main(String[] args) throws RemoteException, AlreadyBoundException, java.rmi.AlreadyBoundException{
+        System.setProperty("java.rmi.server.hostname", "25.86.45.96");
         Remote remote =  UnicastRemoteObject.exportObject( new IOferta(){
 
             @Override
-            public void CrearOferta() throws RemoteException {
+            public String CrearOferta() throws RemoteException {
                 System.out.println("crear Oferta");
+                return "crear Oferta";
                 
             }
 
             @Override
-            public void MostrarOfertas() throws RemoteException {
+            public String MostrarOfertas() throws RemoteException {
                 System.out.println("motrar ofertas");
+                return "motrar ofertas";
                 
             }
             
